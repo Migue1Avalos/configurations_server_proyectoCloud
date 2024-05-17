@@ -9,7 +9,7 @@ spring:
     password: utec123456
   jpa:
     hibernate:
-      ddl-auto: update  # O el que mejor se ajuste a tu estrategia de gestión de esquema
+      ddl-auto: create  # O el que mejor se ajuste a tu estrategia de gestión de esquema
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     properties:
