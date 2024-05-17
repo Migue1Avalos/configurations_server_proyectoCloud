@@ -3,7 +3,7 @@ server:
   port: 8080
 
 my_ip:
-  value: 3.91.71.245
+  value: 54.236.5.210
 
 
 spring:
@@ -33,7 +33,7 @@ spring:
 # Configuración de Eureka
 eureka:
   instance:
-    hostname: 3.91.71.245
+    hostname: 54.236.5.210
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
