@@ -2,31 +2,38 @@
 server:
   port: 8080
 
-eureka:
-  client:
-    registerWithEureka: false
+my_ip:
+  value: 3.91.71.245
+
 
 spring:
   application:
     name: msvc-gateway
   cloud:
     gateway:
-
       mvc:
-        routes:    # rutas a las que se puede acceder
+        routes:
           - id: usuarios
-            uri: http://34.204.82.109:9092
+            uri: http://${my_ip.value}:9092
             predicates:
               - Path=/api/usuarios/**
           - id: respuesta
-            uri: http://34.204.82.109:9091
+            uri: http://${my_ip.value}:9091
             predicates:
               - Path=/api/respuestas/**
           - id: hilos
-            uri: http://34.204.82.109:9090
+            uri: http://${my_ip.value}:9090
             predicates:
               - Path=/api/hilos/**
           - id: estados
-            uri: http://34.204.82.109:9093
+            uri: http://${my_ip.value}:9093
             predicates:
               - Path=/api/estados/**
+
+# Configuración de Eureka
+eureka:
+  instance:
+    hostname: 3.91.71.245
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
