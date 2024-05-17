@@ -2,17 +2,15 @@ server:
   port: 9093
 
 spring:
-  application:
-    name: msvc-estados
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password: password
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://database-1.cnot7bnrds6j.us-east-1.rds.amazonaws.com:5432/database-1
+    username: postgres
+    password: utec123456
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    database-platform: org.hibernate.dialect.H2Dialect
+      ddl-auto: update  # O el que mejor se ajuste a tu estrategia de gestión de esquema
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     properties:
       hibernate:
@@ -21,7 +19,7 @@ spring:
 # Configuración de Eureka
 eureka:
   instance:
-    hostname: 3.91.71.245
+    hostname: 54.236.5.210
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
