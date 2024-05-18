@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://database-1.cnot7bnrds6j.us-east-1.rds.amazonaws.com:5432/database-1
+    url: jdbc:postgresql://database-1.cnot7bnrds6j.us-east-1.rds.amazonaws.com:5432/dbcloud
     username: postgres
     password: utec123456
   jpa:
@@ -19,7 +19,7 @@ spring:
 # Configuración de Eureka
 eureka:
   instance:
-    hostname: 54.236.5.210
+    hostname: 23.20.122.14
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
